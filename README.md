@@ -1,39 +1,39 @@
 # Finance Manager CLI 💰
 
-Prosta aplikacja konsolowa napisana w Javie, służąca do zarządzania domowym budżetem. Umożliwia śledzenie przychodów i wydatków, analizowanie kosztów według kategorii oraz trwały zapis danych do pliku JSON. Projekt został zrealizowany z podziałem na warstwy (architektura zbliżona do Clean Architecture).
+A simple console application written in Java for managing a personal budget. It allows tracking income and expenses, analyzing costs by category, and persistently saving data to a JSON file. The project was built using a layered architecture (similar to Clean Architecture).
 
-## 🚀 Funkcjonalności
+## 🚀 Features
 
-* **Dodawanie transakcji:** Zapisuj przychody i wydatki, określając kwotę, opis, typ oraz kategorię (np. jedzenie, transport, długi).
-* **Usuwanie transakcji:** Możliwość usunięcia konkretnej transakcji za pomocą jej unikalnego identyfikatora UUID.
-* **Przeglądanie historii:** Przejrzysta tabela ze wszystkimi zapisanymi transakcjami.
-* **Obliczanie salda:** Szybki podgląd aktualnego balansu konta (przychody minus wydatki).
-* **Analiza wydatków:**
-  * Sumowanie wydatków według kategorii.
-  * Wyszukiwanie największego wydatku w podanym miesiącu i roku.
-* **Trwałość danych:** Wszystkie transakcje są automatycznie zapisywane w pliku `transaction.json`.
+* **Add transactions:** Record income and expenses by specifying the amount, description, type, and category (e.g., food, transport, debt).
+* **Remove transactions:** Delete a specific transaction using its unique UUID.
+* **View history:** A clear table displaying all saved transactions.
+* **Calculate balance:** Quick overview of the current account balance (income minus expenses).
+* **Expense analysis:**
+  * Summing up expenses by category.
+  * Finding the highest expense in a given month and year.
+* **Data persistence:** All transactions are automatically saved in the `transaction.json` file.
 
-## 🛠️ Technologie
+## 🛠️ Technologies
 
-* **Język:** Java
-* **Biblioteki:** Jackson (`jackson-databind`, `jackson-datatype-jsr310`) do serializacji i deserializacji danych w formacie JSON.
-* **Architektura:** Warstwowa (Domain, Application, Infrastructure, Presentation).
+* **Language:** Java
+* **Libraries:** Jackson (`jackson-databind`, `jackson-datatype-jsr310`) for JSON data serialization and deserialization.
+* **Architecture:** Layered (Domain, Application, Infrastructure, Presentation).
 
-## 📁 Struktura projektu
+## 📁 Project Structure
 
-* `domain` - Modele danych (Transakcja, Kategorie, Typy) oraz interfejsy repozytoriów.
-* `application` - Logika biznesowa (`TransactionService`).
-* `infrastructure` - Implementacja dostępu do danych (zapis/odczyt z pliku JSON).
-* `presentation` - Interfejs użytkownika (CLI w konsoli).
+* `domain` - Data models (Transaction, Categories, Types) and repository interfaces.
+* `application` - Business logic (`TransactionService`).
+* `infrastructure` - Data access implementation (read/write from/to a JSON file).
+* `presentation` - User interface (Console CLI).
 
-## ⚙️ Uruchomienie
+## ⚙️ Getting Started
 
-1. Sklonuj repozytorium.
-2. Upewnij się, że masz dodane zależności Jacksona w swoim pliku konfiguracyjnym (np. `pom.xml` dla Mavena).
-3. **Ważne:** W klasie `JsonTransactionRepository` znajduje się ścieżka do pliku zapisu. Zaktualizuj zmienną `filePath` na odpowiednią dla Twojego środowiska (np. ścieżkę względną `transaction.json`), aby zapis działał poprawnie.
-4. Uruchom klasę `Main.java`.
+1. Clone the repository.
+2. Make sure you have added the Jackson dependencies in your configuration file (e.g., `pom.xml` for Maven).
+3. **Important:** The `JsonTransactionRepository` class contains the save file path. Update the `filePath` variable to match your environment (e.g., a relative path like `transaction.json`) for saving to work correctly.
+4. Run the `Main.java` class.
 
-## 📌 Planowane udoskonalenia (To-Do)
+## 📌 Planned Improvements (To-Do)
 
-* Dodanie własnych wyjątków (Custom Exceptions) do lepszej obsługi błędów wejścia.
-* Napisanie testów jednostkowych przy użyciu JUnit.
+* Add Custom Exceptions for better input error handling.
+* Write unit tests using JUnit.
