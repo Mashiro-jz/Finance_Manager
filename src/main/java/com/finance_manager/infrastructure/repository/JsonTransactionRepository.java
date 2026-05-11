@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class JsonTransactionRepository implements TransactionRepository {
-    String filePath ="C:\\Intelij_IDEA\\Developer_Projects\\Finance_Manager\\src\\transaction.json";
+    String filePath ="src\\transaction.json";
     private final ObjectMapper mapper;
 
     public JsonTransactionRepository() {
